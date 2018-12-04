@@ -20,6 +20,5 @@ class_identity = zeros(length(data), 1);
 %k_means
 
 bayes_training
-bayes_classify
 
 toc

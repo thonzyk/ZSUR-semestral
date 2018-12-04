@@ -69,11 +69,11 @@ pocet_trid_MSH = data_length - pocet_trid_MSH; % Výsledné urèení poètu tøíd
 
 
 %% VYKRESLENÍ
-% figure
-% plot(prubeh_h)
-% 
-% figure
-% plot(der_prubeh_h)
+figure
+plot(prubeh_h)
+
+figure
+plot(der_prubeh_h)
 
 
 

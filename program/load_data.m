@@ -8,6 +8,13 @@ data = importdata(filename_data,delimiterIn,headerlinesIn);
 max_value = max(data);
 min_value = min(data);
 
-data = data(1:1000, :); % TODO: OSDTRANIT
+%data = data(1:100, :); % TODO: OSDTRANIT
 
-data_length = length(data);
+
+
+
+
+
+
+
+

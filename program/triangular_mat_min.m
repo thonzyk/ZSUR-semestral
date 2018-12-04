@@ -1,4 +1,4 @@
-function [ min min_i min_j ] = triangular_mat_min( matrix )
+function [ min, min_i, min_j ] = triangular_mat_min( matrix )
 
 len = length(matrix);
 min = inf;

@@ -1,0 +1,19 @@
+
+
+obraz = [1 5];
+
+results = zeros(1, count_of_int_in_css(1, :, 1));
+
+for class=1:length(results)
+    
+    result(class) = class_probability(class);
+    
+    for dimension=1:patterns_dimension
+        result(class) = result(class) * ( count_of_int_in_css(class, obraz(dimension), dimension) / patterns_in_class(class) );
+    end
+end
+
+
+
+
+
