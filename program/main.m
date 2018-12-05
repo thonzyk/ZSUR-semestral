@@ -17,9 +17,9 @@ class_identity = zeros(length(data), 1);
 
 %metoda_MAXMIN
 
-%k_means
+k_means
 
-bayes_training
-bayes_classify
+%bayes_training
+%bayes_classify
 
 toc

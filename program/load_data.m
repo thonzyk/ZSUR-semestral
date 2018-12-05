@@ -5,10 +5,12 @@ delimiterIn = ' ';
 headerlinesIn = 0;
 data = importdata(filename_data,delimiterIn,headerlinesIn);
 
-max_value = max(data);
-min_value = min(data);
 
-%data = data(1:100, :); % TODO: OSDTRANIT
+
+%data = data(1:1000, :); % TODO: OSDTRANIT
+
+max_data_value = max(data);
+min_data_value = min(data);
 
 
 

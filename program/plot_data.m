@@ -19,4 +19,4 @@ end
 
 hold off
 
-axis(1.1*[min_value(1) max_value(1) min_value(2) max_value(2)]) 
+axis(1.1*[min_data_value(1) max_data_value(1) min_data_value(2) max_data_value(2)]) 

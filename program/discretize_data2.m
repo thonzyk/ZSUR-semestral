@@ -1,4 +1,4 @@
-function [ data_changed, interval_length ] = discretize_data( data, intervals_per_dimension )
+function [ data_changed ] = discretize_data2( data, interval_length )
 
 data_min1 = min(data);
 data_min = [];
@@ -11,7 +11,7 @@ data_changed = data - data_min;
 
 data_min = min(data_changed);
 data_max = max(data_changed);
-interval_length = (data_max - data_min) / intervals_per_dimension;
+%interval_length = (data_max - data_min) / intervals_per_dimension;
 data_interval = [];
 
 for i=1:length(data)

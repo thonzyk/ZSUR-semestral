@@ -3,7 +3,12 @@
 figure %
 hold on %
 
-for intervals_per_dimension=7
+[empty, interval_length1] = discretize_data(data, 1);
+
+
+for k=1:-0.1:0.1
+    
+    interval_length = interval_length1*k;
     
     load_class_identity
     
@@ -13,11 +18,13 @@ for intervals_per_dimension=7
     
     %intervals_per_dimension = 2; % data budou diskretizována na k
     
-    [discrete_data, interval_length] = discretize_data(data, intervals_per_dimension);
+    discrete_data = discretize_data2(data, interval_length);
     
     patterns_dimension = length(data(1, :));
     
-    count_of_int_in_css = zeros(intervals_per_dimension, class_count, patterns_dimension);
+    intervals_per_dimension = 1/k;
+    
+    count_of_int_in_css = zeros(ceil(intervals_per_dimension), class_count, patterns_dimension);
     
     %% SESTAVENÍ MATICE count_of_int_in_css
     

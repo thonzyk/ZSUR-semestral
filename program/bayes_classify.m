@@ -1,6 +1,6 @@
 
 
-obraz = [2 3];
+%obraz = [2 3];
 
 probabilities = zeros(1, length(count_of_int_in_css(1, :, 1)));
 
@@ -21,14 +21,14 @@ end
 max_probability = 0;
 max_probability_index = -1;
 
-for i=1:length(probabilities)
-    if probabilities(i) > max_probability
-        max_probability = probabilities(i);
-        max_probability_index = i;
+for ijk=1:length(probabilities)
+    if probabilities(ijk) > max_probability
+        max_probability = probabilities(ijk);
+        max_probability_index = ijk;
     end
 end
 
-fprintf('Obraz patøí do tøídy: %d\n', max_probability_index);
+%fprintf('Obraz patøí do tøídy: %d\n', max_probability_index);
 
 
 

@@ -1,17 +1,39 @@
 
 
-obraz = [1 5];
+%obraz = [2 3];
 
-results = zeros(1, count_of_int_in_css(1, :, 1));
+probabilities = zeros(1, length(count_of_int_in_css(1, :, 1)));
 
-for class=1:length(results)
+for class=1:length(probabilities)
     
-    result(class) = class_probability(class);
+    probabilities(class) = class_probability(class);
+    
+    prob2 = 0;
     
     for dimension=1:patterns_dimension
-        result(class) = result(class) * ( count_of_int_in_css(class, obraz(dimension), dimension) / patterns_in_class(class) );
+        
+        prunik_x_css = count_of_int_in_css(obraz(dimension), class, dimension);
+        
+        pocet_v_css = patterns_in_class(class);
+        
+        prob2 = prob2 + ( prunik_x_css / pocet_v_css );
+    end
+    
+    probabilities(class) = prob
+    
+end
+
+max_probability = 0;
+max_probability_index = -1;
+
+for ijk=1:length(probabilities)
+    if probabilities(ijk) > max_probability
+        max_probability = probabilities(ijk);
+        max_probability_index = ijk;
     end
 end
+
+%fprintf('Obraz patøí do tøídy: %d\n', max_probability_index);
 
 
 
