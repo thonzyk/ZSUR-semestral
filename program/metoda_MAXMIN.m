@@ -1,9 +1,9 @@
 %% --URÈENÍ POÈTU TØÍD POMOCÍ METODY MAXMIN-- %%
 
 %% VYTVOØENÍ DISTANÈNÍ MATICE
-distance_matrix = zeros(data_length, data_length);
-for i=1:data_length
-    for j=(i+1):data_length
+distance_matrix = zeros(length(data), length(data));
+for i=1:length(data)
+    for j=(i+1):length(data)
         diff = norm(data(i, :) - data(j, :));
         distance_matrix(i, j) = diff;
     end

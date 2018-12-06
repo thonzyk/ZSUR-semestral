@@ -85,7 +85,7 @@ end
 
 write_my_data(class_identity, 'class_identity');
 
-plot_data
+%plot_data
 
 % figure
 % hold on

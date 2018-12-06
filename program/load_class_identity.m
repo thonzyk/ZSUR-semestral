@@ -12,3 +12,5 @@ patterns_in_class = zeros(1, class_count);
 for i=1:length(class_identity)
     patterns_in_class(class_identity(i)) = patterns_in_class(class_identity(i)) + 1;
 end
+
+pocet_trid = max(class_identity);

@@ -11,6 +11,9 @@ data = importdata(filename_data,delimiterIn,headerlinesIn);
 
 max_data_value = max(data);
 min_data_value = min(data);
+data_interval = max_data_value - min_data_value;
+
+data_dimension = length(data(1, :));
 
 
 

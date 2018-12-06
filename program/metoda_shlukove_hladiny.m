@@ -13,7 +13,7 @@ shluk_to_merge_2 = inf;
 dead_shluky = 0; % seznam slouèených shlukù
 
 %% VYTVOØENÍ DISTANÈNÍ MATICE
-distance_matrix = zeros(data_length, data_length);
+distance_matrix = zeros(length(data), length(data));
 for i=1:length(shluky)
     for j=(i+1):length(shluky)
         diff = norm(shluky(i, :) - shluky(j, :));
@@ -28,11 +28,11 @@ end
 
 %% POSTUPNÉ SJEDNOCOVÁNÍ JEDNOTLIVÝCH SHLUKÙ
 
-for i=1:data_length-2
+for i=1:length(data)-2
     
-    [min, shluk_to_merge_1, shluk_to_merge_2] = triangular_mat_min(distance_matrix);
+    [min_dist, shluk_to_merge_1, shluk_to_merge_2] = triangular_mat_min(distance_matrix);
     
-    prubeh_h(i) = min;
+    prubeh_h(i) = min_dist;
     
     new_shluk = (shluky(shluk_to_merge_1, :) + shluky(shluk_to_merge_2, :)) / 2;
     shluky(shluk_to_merge_1, :) = [];
@@ -65,15 +65,15 @@ der_prubeh_h = my_derivative(prubeh_h); % Derivace prùbìhu zmìny h
 
 [empty, pocet_trid_MSH] = max(der_prubeh_h);
 
-pocet_trid_MSH = data_length - pocet_trid_MSH; % Výsledné urèení poètu tøíd
+pocet_trid_MSH = length(data) - pocet_trid_MSH; % Výsledné urèení poètu tøíd
 
 
 %% VYKRESLENÍ
-figure
-plot(prubeh_h)
-
-figure
-plot(der_prubeh_h)
+% figure
+% plot(prubeh_h)
+% 
+% figure
+% plot(der_prubeh_h)
 
 
 
