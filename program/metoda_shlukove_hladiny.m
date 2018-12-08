@@ -18,11 +18,6 @@ for i=1:length(shluky)
     for j=(i+1):length(shluky)
         diff = norm(shluky(i, :) - shluky(j, :));
         distance_matrix(i, j) = diff;
-        %         if diff < min_distance
-        %             min_distance = diff;
-        %             shluk_to_merge_1 = i;
-        %             shluk_to_merge_2 = j;
-        %         end
     end
 end
 

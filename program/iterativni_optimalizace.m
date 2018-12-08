@@ -1,0 +1,14 @@
+%% --METODA ITERATIVNÍ OPTIMALIZACE-- %%
+
+
+
+
+
+
+
+
+
+
+
+
+

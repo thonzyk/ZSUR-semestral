@@ -83,7 +83,7 @@ for i=T_3
     class_identity(i) = 3;
 end
 
-write_my_data(class_identity, 'class_identity');
+write_my_data(class_identity, 'class_identity'); % TODO: nejdøív smazat pùvodní soubor
 
 %plot_data
 
