@@ -29,8 +29,8 @@ for shluk_1_i=1:length(shluky_cell)
             end
         end
         
-        shluky_cell{shluk_1_i} = shluk_1;
-        shluky_cell{shluk_2_i} = shluk_2;
+        stredy_array{shluk_1_i} = shluk_1;
+        stredy_array{shluk_1_i} = shluk_1;
     end
 end
 

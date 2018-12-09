@@ -7,7 +7,7 @@ data = importdata(filename_data,delimiterIn,headerlinesIn);
 
 
 
-data = data(1:2000, :); % TODO: OSDTRANIT
+%data = data(1:2000, :); % TODO: OSDTRANIT
 
 max_data_value = max(data);
 min_data_value = min(data);

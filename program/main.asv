@@ -11,7 +11,7 @@ load_data
 create_color_sequence
 class_count = 3;
 k_means
-plot_data
+
 %
 
 
