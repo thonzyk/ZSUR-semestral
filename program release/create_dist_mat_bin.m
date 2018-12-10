@@ -1,0 +1,13 @@
+function [ dist_mat_bin ] = create_dist_mat_bin( data, stred_1, stred_2 )
+%CREATE_DIST_MAT_BIN_3 Vytvoøí distanèní matici potøebnou pro 
+% rozdìlení do dvou nových shlukù
+
+dist_mat_bin = zeros(length(data), length(stred_1));
+
+for i=1:length(data)
+    dist_mat_bin(i, 1) = norm(data(i, :) - stred_1);
+    dist_mat_bin(i, 2) = norm(data(i, :) - stred_2);
+end
+
+end
+

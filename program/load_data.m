@@ -5,9 +5,7 @@ delimiterIn = ' ';
 headerlinesIn = 0;
 data = importdata(filename_data,delimiterIn,headerlinesIn);
 
-
-
-%data = data(1:2000, :); % TODO: OSDTRANIT
+data = data(1:200, :); % Oøez dat pro vývojové úèely
 
 max_data_value = max(data);
 min_data_value = min(data);
