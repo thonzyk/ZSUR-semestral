@@ -13,14 +13,17 @@ distance_matrix = create_dist_mat(orizla_data);
 
 x = ceil(rand*length(orizla_data)); % index obrazu x v datech (inicializace náhodným výbìrem)
 
+plot_points = orizla_data(x, :);
+
 % Nalezení nejbližšího obrazu
 [skok, x_next] = closest_image(x, distance_matrix);
 
 prubeh_skok(1) = skok;
 
-% vyøíznutí pøedchozího obrazu z matice
+% Vyøíznutí pøedchozího obrazu z matice
 distance_matrix(x, :) = [];
 distance_matrix(:, x) = [];
+orizla_data(x, :) = [];
 
 %% POSTUPNÉ SKOKY NA DALŠÍ NEJBLIŽŠÍ OBRAZ
 
@@ -31,18 +34,24 @@ for i=2:length(orizla_data)-1
     
     prubeh_skok(i) = skok;
     
+    plot_points = [plot_points; orizla_data(x, :)];
+    
     % vyøíznutí pøedchozího obrazu z matice
     distance_matrix(x, :) = [];
     distance_matrix(:, x) = [];
+    orizla_data(x, :) = [];
+
 end
 
 %% VYHODNOCENÍ
 skok_limit = max(prubeh_skok) / 2;
 pocet_trid_MRM = 1;
+prechody_i = [];
 
 for i=1:length(prubeh_skok)
     if prubeh_skok(i) > skok_limit
         pocet_trid_MRM = pocet_trid_MRM + 1;
+        prechody_i = [prechody_i i];
     end
 end
 
@@ -65,9 +74,32 @@ write_my_data(pocet_trid, 'pocet_trid');
 %% VYKRESLENÍ
 figure
 plot(prubeh_skok)
-title('Metoda øetìzové mapy')
+title('Metoda øetìzové mapy - prùbìh skoku')
 xlabel('Èíslo skoku')
 ylabel('Velikost skoku')
+
+figure
+hold on
+plot(plot_points(1, 1), plot_points(1, 2), '*r')
+plot(plot_points(end, 1), plot_points(end, 2), '*b')
+
+for i=1:length(plot_points)-1
+    if ismember(i, prechody_i)
+        line([plot_points(i, 1) plot_points(i+1, 1)], [plot_points(i, 2) plot_points(i+1, 2)], 'Color', 'm')
+    else
+        line([plot_points(i, 1) plot_points(i+1, 1)], [plot_points(i, 2) plot_points(i+1, 2)])
+    end
+    
+end
+
+title('Metoda øetìzové mapy - vizualizace')
+xlabel('Èíslo skoku')
+ylabel('Velikost skoku')
+legend('start', 'konec')
+hold off
+axis(1.1*[min_data_value(1) max_data_value(1) min_data_value(2) max_data_value(2)])
+
+
 
 %% PROÈIŠTÌNÍ WORKSPACE
 vars = {'diff','distance_matrix','i', 'j', 'prubeh_skok', 'skok', 'x', 'x_next', 'skok_limit'};

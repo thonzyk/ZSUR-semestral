@@ -2,11 +2,23 @@
 
 hold on
 
+exist class_identity;
+
 % Vykreslení dat v 2D prostoru
-for i=1:length(data)
-    css_identity = class_identity(i);
-    plot(data(i, 1),data(i, 2), my_colors_primary_star{css_identity})
+if ans
+    % Barevnì podle tøíd
+    for i=1:length(data)
+        css_identity = class_identity(i);
+        plot(data(i, 1),data(i, 2), my_colors_primary_star{css_identity})
+    end
+else
+    % Jednobarevnì
+    for i=1:length(data)
+        plot(data(i, 1),data(i, 2), '*k')
+    end
 end
+
+
 
 hold off
 

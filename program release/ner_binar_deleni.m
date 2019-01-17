@@ -1,4 +1,5 @@
 %% --ROZTØÍDÌNÍ OBRAZÙ DO TØÍD METODOU NEROVNOMÌRNÉHO BINÁRNÍHO DÌLENÍ-- %%
+% UPOZORNÌNÍ: Metoda pøeuspoøádá poøadí dat
 
 load_data
 
@@ -17,7 +18,7 @@ for loop_i=1:pocet_trid-1
     
     mira_orezu = 400/(loop_i*2);
     orizly_shluk = shluk_to_split(1:ceil(length(data)/mira_orezu), :);
-    %orizly_shluk = shluk_to_split;
+%     orizly_shluk = shluk_to_split;
     
     % Distanèní matice
     distance_matrix = create_dist_mat(orizly_shluk);

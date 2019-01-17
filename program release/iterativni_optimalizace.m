@@ -31,12 +31,28 @@ for shluk_1_i=1:length(shluky_cell)
     end
 end
 
-%% ZMÌNA CLASS_IDENTITY
-
-for shluk_i=1:length(shluky_cell)
-    for i=shluky_cell{shluk_i}
-        class_identity(i) = shluk_i;
-    end
-end
-
+%% VYKRESLENÍ
+figure
 plot_data
+title('Iterativní optimalizace')
+xlabel('x_1')
+ylabel('x_2')
+
+%% ZÁPIS DO SOUBORU
+% if exist('class_identity.txt', 'file') == 2
+%      delete class_identity.txt
+% end
+% 
+% % % V pøípadì verze R2017b a vyšší
+% % -->
+% % if isfile('class_identity.txt')
+% %     delete class_identity.txt
+% % end
+% % <--
+% 
+% write_my_data(class_identity, 'class_identity');
+
+%% PROÈIŠTÌNÍ WORKSPACE
+vars = {'i', 'j_1_ubytek', 'j_2_prirustek', 'obraz', 'obraz_i', 'shluk_1', 'shluk_2',  'shluk_1_i', 'shluk_2_i', 'stred1', 'stred2'};
+clear(vars{:})
+clear vars
