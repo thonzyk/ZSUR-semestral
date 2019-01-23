@@ -50,6 +50,8 @@ end
 prubeh_h(end) = distance_matrix(1, 2); % Poslední slouèení
 
 der_prubeh_h = my_derivative(prubeh_h); % Derivace prùbìhu zmìny h
+[max_v, max_i] = max(der_prubeh_h);
+inflex_point = prubeh_h(max_i);
 
 % Poèet tøíd urèím podle indexu, u kterého dojde k nejvìtšímu skoku h.
 [empty, pocet_trid_MSH] = max(der_prubeh_h);
@@ -59,12 +61,18 @@ pocet_trid = pocet_trid_MSH;
 %% VYKRESLENÍ
 figure
 plot(prubeh_h)
+hold on
+plot(max_i, inflex_point, '*m')
+hold off
 title('Metoda shlukové hladiny - prùbìh h')
 xlabel('Èíslo iterace slouèení')
 ylabel('h')
 
 figure
 plot(der_prubeh_h)
+hold on
+plot(max_i, max_v, '*m')
+hold off
 title('Metoda shlukové hladiny - prùbìh zmìny h')
 xlabel('Èíslo iterace slouèení')
 ylabel('Zmìna h')

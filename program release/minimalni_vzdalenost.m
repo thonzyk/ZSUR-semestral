@@ -2,8 +2,6 @@
 
 % Použiji støedy urèené pøedchozími metodami
 
-rastr = 5;
-
 figure
 hold on
 
@@ -35,6 +33,6 @@ xlabel('x_1')
 ylabel('x_2')
 
 %% PROÈIŠTÌNÍ WORKSPACE
-vars = {'class_color','closest','closest_index', 'css_identity', 'distances', 'i', 'pattern', 'rastr', 'stred', 'sz', 'x_1', 'x_2'};
+vars = {'class_color','closest','closest_index', 'css_identity', 'distances', 'i', 'pattern', 'stred', 'sz', 'x_1', 'x_2'};
 clear(vars{:})
 clear vars

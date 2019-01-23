@@ -16,9 +16,9 @@ for loop_i=1:pocet_trid-1
     pracovni_shluk_1 = [];
     pracovni_shluk_2 = [];
     
-    mira_orezu = 400/(loop_i*2);
-    orizly_shluk = shluk_to_split(1:ceil(length(data)/mira_orezu), :);
-%     orizly_shluk = shluk_to_split;
+%     mira_orezu = 400/(loop_i*2);
+%     orizly_shluk = shluk_to_split(1:ceil(length(data)/mira_orezu), :);
+    orizly_shluk = shluk_to_split;
     
     % Distanèní matice
     distance_matrix = create_dist_mat(orizly_shluk);
@@ -103,6 +103,7 @@ write_my_data(class_identity, 'class_identity');
 shluky_cell = shluky_cell_2;
 
 %% VYKRESLENÍ
+figure
 plot_data
 title('Nerovnomìrné binární dìlení')
 xlabel('x_1')

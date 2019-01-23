@@ -1,6 +1,7 @@
 %% TØÍDÌNÍ DO TØÍD METODOU KONSTANTNÍCH PØÍRÙSTKÙ
 
-beta = 0.1;
+beta = 2;
+pasmo = 4;
 
 q_list = {};
 
@@ -27,9 +28,10 @@ for css=1:pocet_trid
             
             ck = beta / norm_na_2(x, zeros(1, length(x)));
             
-            odhad = sign(q'*x);
+%             odhad = sign(q'*x);
+            porovnani = q'*x*omega;
             
-            if odhad ~= omega
+            if porovnani < pasmo
                 q = q + ck*x*omega;
                 chyba = chyba + 1;
             end
@@ -43,20 +45,48 @@ end
 %% VYKRESLENÍ
 
 figure
-plot_data
 hold on
 
-x = 1.1*min_data_value(1):1.1*data_interval(1):2.2*max_data_value(1);
+% Rastr
+sz = 10;
+for x_1=min_data_value(1):rastr:max_data_value(1)
+    for x_2=min_data_value(2):rastr:max_data_value(2)
+        omega_list = zeros(pocet_trid, 1);
+        
+        for q_index=1:length(q_list)
+            q = q_list{q_index};
+            omega = q(2)*x_1 + q(3)*x_2 + q(1);
+            if omega > 0
+                omega_list(q_index) = 1;
+            end
+        end
+        
+        if sum(omega_list) == 1
+            [empty, color_i] = ismember(1, omega_list);
+            class_color = my_colors_secondary{color_i};
+            scatter(x_1, x_2, sz, 'MarkerEdgeColor', class_color)
+        else
+            scatter(x_1, x_2, sz, 'MarkerEdgeColor', [0 0 0])
+        end
+        
+    end
+end
 
+% Oddìlující pøímky
+x = 1.1*min_data_value(1):1.1*data_interval(1):2.2*max_data_value(1);
 for q_index=1:length(q_list)
     q = q_list{q_index};
     y = -q(2)/q(3)*x -q(1)/q(3);
     plot(x, y, my_colors_primary{q_index});
 end
 
+% Trénovací data
+plot_data
+
 hold off
 axis(1.1*[min_data_value(1) max_data_value(1) min_data_value(2) max_data_value(2)]);
-title('Metoda konstantních pøírùstkù')
+title_name = ['Metoda konstantních pøírùstkù - PTC: ', num2str(iterations)];
+title(title_name)
 xlabel('x_1')
 ylabel('x_2')
 

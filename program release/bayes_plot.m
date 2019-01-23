@@ -1,6 +1,6 @@
 
 
-x1 = -30:.2:30; x2 = -60:.2:10;
+x1 = -30:rastr:30; x2 = -60:rastr:10;
 [X1,X2] = meshgrid(x1,x2);
 
 for i=1:length(mi_cell)
