@@ -70,18 +70,18 @@ xlabel('x_1')
 ylabel('x_2')
 
 %% ZÁPIS DO SOUBORU
-% if exist('class_identity.txt', 'file') == 2
-%      delete class_identity.txt
+if exist('class_identity.txt', 'file') == 2
+     delete class_identity.txt
+end
+
+% % V pøípadì verze R2017b a vyšší
+% -->
+% if isfile('class_identity.txt')
+%     delete class_identity.txt
 % end
+% <--
 % 
-% % % V pøípadì verze R2017b a vyšší
-% % -->
-% % if isfile('class_identity.txt')
-% %     delete class_identity.txt
-% % end
-% % <--
-% 
-% write_my_data(class_identity, 'class_identity');
+write_my_data(class_identity, 'class_identity');
 
 %% PROÈIŠTÌNÍ WORKSPACE
 vars = {'distance2','i','j', 'patterns_in_class', 'previous_stredy_matrix', 'stred_index', 'T', 'T_cell', 'css_identity', 'dist_vect', 'empty', 'i', 'next_stred', 'oriz_distance_matrix', 'orizla_data', 'stred_1_i', 'stred_2_i', 'stredy_array'};

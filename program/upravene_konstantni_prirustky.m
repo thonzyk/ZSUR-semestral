@@ -99,7 +99,7 @@ xlabel('x_1')
 ylabel('x_2')
 
 %% PROÈIŠTÌNÍ WORKSPACE
-vars = {'ck','beta','chyba', 'css', 'i', 'iterations', 'odhad', 'omega', 'q', 'q_index', 'q_list', 'separated_css_identity', 'x', 'y', 'class_color', 'css_identity', 'css_index', 'norma', 'pasmo'};
+vars = {'ck','beta','chyba', 'css', 'i', 'iterations', 'odhad', 'omega', 'q', 'q_index', 'q_list', 'separated_css_identity', 'x', 'y', 'class_color', 'css_identity', 'css_index', 'norma', 'pasmo', 'ans', 'color_i', 'empty', 'omega_list', 'porovnani', 'sz', 'title_name', 'x_1', 'x_2', 'znovu'};
 clear(vars{:})
 clear vars
 

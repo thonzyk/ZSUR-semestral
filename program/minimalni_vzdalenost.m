@@ -33,6 +33,6 @@ xlabel('x_1')
 ylabel('x_2')
 
 %% PROÈIŠTÌNÍ WORKSPACE
-vars = {'class_color','closest','closest_index', 'css_identity', 'distances', 'i', 'pattern', 'stred', 'sz', 'x_1', 'x_2'};
+vars = {'class_color','closest','closest_index', 'css_identity', 'distances', 'i', 'pattern', 'stred', 'sz', 'x_1', 'x_2', 'ans', 'css_index'};
 clear(vars{:})
 clear vars

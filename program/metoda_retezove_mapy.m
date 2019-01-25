@@ -1,7 +1,7 @@
 %% --URÈENÍ POÈTU TØÍD POMOCÍ METODY ØETÌZOVÉ MAPY-- %%
 
 % Vzhledem ke zpùsobu generování trénovacích dat postaèí pro urèení tøíd
-% použít výøez øeknìme první setina dat.
+% použít výøez dat (napø. setina).
 orizla_data = data(1:ceil(length(data)/100), :);
 
 prubeh_skok = -1 * ones(length(orizla_data)-2, 1); % Prùbìh velikosti skoku k dalšímu obrazu
@@ -105,6 +105,6 @@ axis(1.1*[min_data_value(1) max_data_value(1) min_data_value(2) max_data_value(2
 vars = {'diff','distance_matrix','i', 'j', 'prubeh_skok', 'skok', 'x', 'x_next', 'skok_limit'};
 clear(vars{:})
 clear vars
-vars = {'i','orizla_data','prubeh_skok', 'skok', 'x', 'x_next', 'skok_limit', 'distance_matrix'};
+vars = {'i','orizla_data','prubeh_skok', 'skok', 'x', 'x_next', 'skok_limit', 'distance_matrix', 'prechody_i', 'plot_points'};
 clear(vars{:})
 clear vars

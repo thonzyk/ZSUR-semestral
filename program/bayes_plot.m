@@ -23,7 +23,7 @@ axis([-30 30 -60 10 0 .05])
 xlabel('x1'); ylabel('x2'); zlabel('Probability Density');
 
 %% PROÈIŠTÌNÍ WORKSPACE
-vars = {'F','i','mi', 'sigma', 'x1', 'x2', 'X1', 'X2'};
+vars = {'F','i','mi', 'sigma', 'x1', 'x2', 'X1', 'X2', 'mi_cell', 'sigma_cell'};
 clear(vars{:})
 clear vars
 

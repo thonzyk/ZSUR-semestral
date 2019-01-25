@@ -110,6 +110,6 @@ xlabel('x_1')
 ylabel('x_2')
 
 %% PROÈIŠTÌNÍ WORKSPACE
-vars = {'dist_mat_bin','distance_matrix','empty', 'i', 'J_pracovni_shluk_1', 'J_pracovni_shluk_2', 'loop_i', 'loop_index', 'obraz_1_i', 'obraz_2_i', 'obraz_i', 'pracovni_shluk_1', 'pracovni_shluk_2', 'shluk', 'shluk_i', 'shluk_to_split', 'stred_1', 'stred_2', 'shluky_cell_2', 's_1', 's_2', 'orizly_shluk', 'mira_orezu', 'shluk_2'};
+vars = {'dist_mat_bin','distance_matrix','empty', 'i', 'J_pracovni_shluk_1', 'J_pracovni_shluk_2', 'loop_i', 'loop_index', 'obraz_1_i', 'obraz_2_i', 'obraz_i', 'pracovni_shluk_1', 'pracovni_shluk_2', 'shluk', 'shluk_i', 'shluk_to_split', 'stred_1', 'stred_2', 'shluky_cell_2', 's_1', 's_2', 'orizly_shluk', 'mira_orezu', 'shluk_2', 'ans', 'css_identity'};
 clear(vars{:})
 clear vars

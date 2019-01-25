@@ -1,7 +1,7 @@
 %% --URÈENÍ POÈTU TØÍD POMOCÍ METODY MAXMIN-- %%
 
 % Vzhledem ke zpùsobu generování trénovacích dat postaèí pro urèení tøíd
-% použít výøez øeknìme první setina dat.
+% použít výøez dat (napø. setina).
 orizla_data = data(1:ceil(length(data)/100), :);
 
 %% VYTVOØENÍ DISTANÈNÍ MATICE

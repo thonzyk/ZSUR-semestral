@@ -90,6 +90,6 @@ xlabel('x_1')
 ylabel('x_2')
 
 %% PROÈIŠTÌNÍ WORKSPACE
-vars = {'mi','norm_rozlozeni', 'norm_rozlozeni_cell', 'obraz_i', 'obrazu_in_shluk', 'shluk', 'shluk_2', 'shluk_i', 'sigma', 'x1', 'X1', 'x2', 'X2', 'x_minus_mi', 'sz', 'x_1', 'x_1_index', 'x_2', 'x_2_index', 'rozlozeni_index', 'rozlozeni', 'probabl', 'i', 'highest_probability', 'css_identity', 'class_color', 'best_rozlozeni_index'};
+vars = {'mi','norm_rozlozeni', 'norm_rozlozeni_cell', 'obraz_i', 'obrazu_in_shluk', 'shluk', 'shluk_2', 'shluk_i', 'sigma', 'x1', 'X1', 'x2', 'X2', 'x_minus_mi', 'sz', 'x_1', 'x_1_index', 'x_2', 'x_2_index', 'rozlozeni_index', 'rozlozeni', 'probabl', 'i', 'highest_probability', 'css_identity', 'class_color', 'best_rozlozeni_index', 'ans'};
 clear(vars{:})
 clear vars

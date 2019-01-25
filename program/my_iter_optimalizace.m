@@ -68,21 +68,21 @@ xlabel('x_1')
 ylabel('x_2')
 
 %% ZÁPIS DO SOUBORU
-% if exist('class_identity.txt', 'file') == 2
-%      delete class_identity.txt
+if exist('class_identity.txt', 'file') == 2
+     delete class_identity.txt
+end
+
+% % V pøípadì verze R2017b a vyšší
+% -->
+% if isfile('class_identity.txt')
+%     delete class_identity.txt
 % end
-% 
-% % % V pøípadì verze R2017b a vyšší
-% % -->
-% % if isfile('class_identity.txt')
-% %     delete class_identity.txt
-% % end
-% % <--
-% 
-% write_my_data(class_identity, 'class_identity');
+% <--
+
+write_my_data(class_identity, 'class_identity');
 
 %% PROÈIŠTÌNÍ WORKSPACE
-vars = {'i', 'j_1_ubytek', 'j_2_prirustek', 'obraz', 'obraz_i', 'shluk_1', 'shluk_2',  'shluk_1_i', 'shluk_2_i',  'ethalon_i', 'ethalon_1', 'ethalon_2', 'ethalons_1', 'ethalons_2', 'ethalons_cell', 'number_of_ethalons', 'shluk', 'shluk_i', 'vyrez_shluku'};
+vars = {'i', 'j_1_ubytek', 'j_2_prirustek', 'obraz', 'obraz_i', 'shluk_1', 'shluk_2',  'shluk_1_i', 'shluk_2_i',  'ethalon_i', 'ethalon_1', 'ethalon_2', 'ethalons_1', 'ethalons_2', 'ethalons_cell', 'number_of_ethalons', 'shluk', 'shluk_i', 'vyrez_shluku', 'ans', 'css_identity'};
 clear(vars{:})
 clear vars
 

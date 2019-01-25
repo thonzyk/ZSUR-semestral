@@ -13,7 +13,7 @@ create_color_sequence
 metoda_shlukove_hladiny
 metoda_retezove_mapy
 metoda_maxmin
-% pocet_trid = 3;
+pocet_trid = 3;
 
 %% ROZTØÍDÌNÍ TRÉNOVACÍCH DAT
 ner_binar_deleni

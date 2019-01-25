@@ -3,7 +3,7 @@
 %% INICIALIZACE
 
 % Vzhledem ke zpùsobu generování trénovacích dat postaèí pro urèení tøíd
-% použít výøez øeknìme první setina dat.
+% použít výøez dat (napø. setina).
 orizla_data = data(1:ceil(length(data)/100), :);
 shluky = orizla_data;
 
@@ -93,7 +93,7 @@ write_my_data(pocet_trid, 'pocet_trid');
 
 %% PROÈIŠTÌNÍ WORKSPACE
 
-vars = {'diff','empty', 'der_prubeh_h', 'min_dist', 'new_shluk', 'prubeh_h', 'shluk_to_merge_1', 'shluk_to_merge_2', 'shluky', 'i', 'j', 'distance_matrix', 'orizla_data'};
+vars = {'diff','empty', 'der_prubeh_h', 'min_dist', 'new_shluk', 'prubeh_h', 'shluk_to_merge_1', 'shluk_to_merge_2', 'shluky', 'i', 'j', 'distance_matrix', 'orizla_data', 'max_i', 'max_v', 'inflex_point'};
 clear(vars{:})
 clear vars
 

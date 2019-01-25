@@ -40,6 +40,6 @@ xlabel('x_1')
 ylabel('x_2')
 
 %% PROÈIŠTÌNÍ WORKSPACE
-vars = {'css','css_identity','ethalon', 'ethalon_index', 'i', 'min_distance', 'min_distance_index', 'pattern', 'sz', 'x_1', 'x_2'};
+vars = {'css','css_identity','ethalon', 'ethalon_index', 'i', 'min_distance', 'min_distance_index', 'pattern', 'sz', 'x_1', 'x_2', 'ans'};
 clear(vars{:})
 clear vars
