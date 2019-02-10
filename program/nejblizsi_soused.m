@@ -12,7 +12,7 @@ for x_1=min_data_value(1):rastr:max_data_value(1)
         
         for css_index=1:length(shluky_cell)
             css = shluky_cell{css_index};
-            css = css(:, 1:ceil(length(css)/15)); % oøez
+%             css = css(:, 1:ceil(length(css)/15)); % oøez
             
             for ethalon_index=1:length(css)
                 ethalon = data(css(ethalon_index), :);
@@ -27,14 +27,14 @@ for x_1=min_data_value(1):rastr:max_data_value(1)
         class_color = my_colors_secondary{min_distance_index};
         
         sz = 10;
-        scatter(x_1, x_2, sz, 'MarkerEdgeColor', class_color)
+        scatter(x_1+center(1), x_2+center(2), sz, 'MarkerEdgeColor', class_color)
         
     end
 end
 
 plot_data
 hold off
-axis(1.1*[min_data_value(1) max_data_value(1) min_data_value(2) max_data_value(2)]);
+axis([min_data_value(1)+center(1) max_data_value(1)+center(1) min_data_value(2)+center(2) max_data_value(2)+center(2)]) 
 title('Metoda nejbližšího souseda')
 xlabel('x_1')
 ylabel('x_2')

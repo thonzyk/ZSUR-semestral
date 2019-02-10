@@ -64,9 +64,9 @@ for x_1=min_data_value(1):rastr:max_data_value(1)
         if sum(omega_list) == 1
             [empty, color_i] = ismember(1, omega_list);
             class_color = my_colors_secondary{color_i};
-            scatter(x_1, x_2, sz, 'MarkerEdgeColor', class_color)
+            scatter(x_1+center(1), x_2+center(2), sz, 'MarkerEdgeColor', class_color)
         else
-            scatter(x_1, x_2, sz, 'MarkerEdgeColor', [0 0 0])
+            scatter(x_1+center(1), x_2+center(2), sz, 'MarkerEdgeColor', [0 0 0])
         end
         
     end
@@ -77,14 +77,14 @@ x = 1.1*min_data_value(1):1.1*data_interval(1):2.2*max_data_value(1);
 for q_index=1:length(q_list)
     q = q_list{q_index};
     y = -q(2)/q(3)*x -q(1)/q(3);
-    plot(x, y, my_colors_primary{q_index});
+    plot(x+center(1), y+center(2), my_colors_primary{q_index});
 end
 
 % Trénovací data
 plot_data
 
 hold off
-axis(1.1*[min_data_value(1) max_data_value(1) min_data_value(2) max_data_value(2)]);
+axis([min_data_value(1)+center(1) max_data_value(1)+center(1) min_data_value(2)+center(2) max_data_value(2)+center(2)]) 
 title_name = ['Metoda konstantních pøírùstkù - PTC: ', num2str(iterations)];
 title(title_name)
 xlabel('x_1')

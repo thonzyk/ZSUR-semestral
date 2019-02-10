@@ -31,10 +31,16 @@ for shluk_1_i=1:length(shluky_cell)
     end
 end
 
+J = 0;
+for i=1:pocet_trid
+    J = J + J_shluku_data(shluky_cell{i}, stredy_matrix(i, :), data);
+end
+title_name = ['Iterativní optimalizace - J: ', num2str(round(J))];
+
 %% VYKRESLENÍ
 figure
 plot_data
-title('Iterativní optimalizace')
+title(title_name)
 xlabel('x_1')
 ylabel('x_2')
 

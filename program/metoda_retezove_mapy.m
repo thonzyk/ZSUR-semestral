@@ -80,14 +80,14 @@ ylabel('Velikost skoku')
 
 figure
 hold on
-plot(plot_points(1, 1), plot_points(1, 2), '*r')
-plot(plot_points(end, 1), plot_points(end, 2), '*b')
+plot(plot_points(1, 1)+center(1), plot_points(1, 2)+center(2), '*r')
+plot(plot_points(end, 1)+center(1), plot_points(end, 2)+center(2), '*b')
 
 for i=1:length(plot_points)-1
     if ismember(i, prechody_i)
-        line([plot_points(i, 1) plot_points(i+1, 1)], [plot_points(i, 2) plot_points(i+1, 2)], 'Color', 'm')
+        line([plot_points(i, 1)+center(1) plot_points(i+1, 1)+center(1)], [plot_points(i, 2)+center(2) plot_points(i+1, 2)+center(2)], 'Color', 'm')
     else
-        line([plot_points(i, 1) plot_points(i+1, 1)], [plot_points(i, 2) plot_points(i+1, 2)])
+        line([plot_points(i, 1)+center(1) plot_points(i+1, 1)+center(1)], [plot_points(i, 2)+center(2) plot_points(i+1, 2)+center(2)])
     end
     
 end
@@ -97,7 +97,7 @@ xlabel('»Ìslo skoku')
 ylabel('Velikost skoku')
 legend('start', 'konec')
 hold off
-axis(1.1*[min_data_value(1) max_data_value(1) min_data_value(2) max_data_value(2)])
+axis([min_data_value(1)+center(1) max_data_value(1)+center(1) min_data_value(2)+center(2) max_data_value(2)+center(2)]) 
 
 
 

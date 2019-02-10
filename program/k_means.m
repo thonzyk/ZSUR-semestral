@@ -61,11 +61,17 @@ for i=1:length(class_identity)
     class_identity_keras(i, class_identity(i)) = 1;
 end
 
+J = 0;
+for i=1:pocet_trid
+    J = J + J_shluku_data(shluky_cell{i}, stredy_matrix(i, :), data);
+end
+title_name = ['Metoda k-means - J: ', num2str(round(J))];
+
 
 %% VYKRESLENÍ
 figure
 plot_data
-title('Metoda k-means')
+title(title_name)
 xlabel('x_1')
 ylabel('x_2')
 

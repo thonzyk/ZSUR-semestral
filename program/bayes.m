@@ -75,7 +75,7 @@ for x_1=min_data_value(1):rastr:max_data_value(1)
         class_color = my_colors_secondary{best_rozlozeni_index};
         
         sz = 10;
-        scatter(x_1, x_2, sz, 'MarkerEdgeColor', class_color)
+        scatter(x_1+center(1), x_2+center(2), sz, 'MarkerEdgeColor', class_color)
         
         x_2_index = x_2_index+1;
     end
@@ -84,7 +84,7 @@ end
 
 plot_data
 hold off
-axis(1.1*[min_data_value(1) max_data_value(1) min_data_value(2) max_data_value(2)]);
+axis([min_data_value(1)+center(1) max_data_value(1)+center(1) min_data_value(2)+center(2) max_data_value(2)+center(2)]) 
 title('Bayesova metoda')
 xlabel('x_1')
 ylabel('x_2')

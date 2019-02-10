@@ -87,6 +87,12 @@ for i=1:length(shluky_cell)
     stredy_matrix(i, :) = mean(shluk);
 end
 
+J = 0;
+for i=1:pocet_trid
+    J = J + J_shluku(shluky_cell{i}, stredy_matrix(i, :));
+end
+title_name = ['Nerovnomìrné binární dìlení - J: ', num2str(round(J))];
+
 %% ZÁPIS DO SOUBORU
 if exist('class_identity.txt', 'file') == 2
      delete class_identity.txt
@@ -105,7 +111,7 @@ shluky_cell = shluky_cell_2;
 %% VYKRESLENÍ
 figure
 plot_data
-title('Nerovnomìrné binární dìlení')
+title(title_name)
 xlabel('x_1')
 ylabel('x_2')
 
